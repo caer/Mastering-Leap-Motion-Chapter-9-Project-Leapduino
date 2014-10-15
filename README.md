@@ -1,4 +1,4 @@
-Leapaint
+Leapduino
 ========
 
 A simple Java application bundled with a basic Arduino sketch that uses the Leap Motion Controller to make the built-in LED on an Arduino blink.
