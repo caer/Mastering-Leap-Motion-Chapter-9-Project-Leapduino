@@ -9,7 +9,7 @@ This project was created using Eclipse and the Arduino IDE, since there are two 
 
 Assuming you're using Eclipse already, all you have to do is download the project and import it into the Eclipse IDE in order to get the Java half to work.  
 
-You will then need to open Leapduino.ino (located in src/Leapduino/Leapduino.ino in the project) and open it from within the Arduino IDE.  Once Leapduino.ino is open, simply upload it to a connected Arduino.  From there, assuming the Arduino is on COM4, you can start the Leapduino Java application and begin playing around!
+You will then need to open Leapduino.ino (located in Leapduino/Leapduino.ino in the project) and open it from within the Arduino IDE.  Once Leapduino.ino is open, simply upload it to a connected Arduino.  From there, assuming the Arduino is on COM4, you can start the Leapduino Java application and begin playing around!
 
 Everything else is pre-configured to "just work", with the exception of LeapJava.jar, Leap.dll and LeapJava.dll.  The ones included with the project are for a 64-bit Windows installation, but you can find the files for your specific platform within the Leap Motion SDK at https://developer.leapmotion.com/.  
 
