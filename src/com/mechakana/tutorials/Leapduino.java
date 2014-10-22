@@ -35,11 +35,11 @@ public class Leapduino
 	//Main/////////////////////////////////////////////////////////////////////
 	public static final void main(String args[])
 	{		
-		//Initialize Serial Communications.
+		//Initialize serial communications.
 		RS232Protocol serial = new RS232Protocol();
 		serial.connect("COM4");
 	
-		//Initialize Leapduino Listener.
+		//Initialize the Leapduino listener.
 		LeapduinoListener leap = new LeapduinoListener(serial);
 		Controller controller = new Controller();
 		controller.addListener(leap);

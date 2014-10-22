@@ -42,37 +42,25 @@ public class LeapduinoListener extends Listener
     //
 	//Called when the LeapduinoListener class is first initialized.
 	//
-	public void onInit(Controller controller) 
-    {
-        System.out.println("Initialized");
-    }
+	public void onInit(Controller controller) { System.out.println("Initialized"); }
 
 	//Member Function: onConnect///////////////////////////////////////////////
 	//
 	//Called when the LeapduinoListener class is connected to a Leap Motion Controller.
 	//
-    public void onConnect(Controller controller) 
-    {
-        System.out.println("Connected");
-    }
+    public void onConnect(Controller controller) { System.out.println("Connected"); }
 
     //Member Function: onDisconnect////////////////////////////////////////////
     //
     //Called when the LeapduinoListener class is disconnected from a Leap Motion Controller.
     //
-    public void onDisconnect(Controller controller) 
-    {
-        System.out.println("Disconnected");
-    }
+    public void onDisconnect(Controller controller) { System.out.println("Disconnected"); }
 
     //Member Function: onExit//////////////////////////////////////////////////
     //
     //Called when the LeapduinoListener class is destroyed.
     //
-    public void onExit(Controller controller) 
-    {
-        System.out.println("Exited");
-    }
+    public void onExit(Controller controller) { System.out.println("Exited"); }
 
     //Member Function: onFrame/////////////////////////////////////////////////
     //
@@ -87,14 +75,14 @@ public class LeapduinoListener extends Listener
 		if (frame.hands().count() > 0)
 		{
 			//Get some hand tracking data.
-			int hand = (int) (frame.hands().frontmost().palmPosition().getZ());
+			int hand = (int) (frame.hands().frontmost().palmPosition().getY());
 			
 			//Send the hand pitch to the Arduino.
 			serial.write(String.valueOf(hand));
 			
 			//Give the Arduino some time to process our data.
 			try { Thread.sleep(30); }
-			catch (Exception e) { e.printStackTrace(); }
+			catch (InterruptedException e) { e.printStackTrace(); }
 		}
     }
 }

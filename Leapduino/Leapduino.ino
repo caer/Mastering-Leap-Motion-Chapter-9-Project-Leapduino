@@ -1,6 +1,6 @@
 //File: Leapduino.ino
 //Project: Leapduino
-//Date: October 8th, 201
+//Date: October 8th, 2014
 //
 //Author: Brandon Sanders <brandon@mechakana.com>
 //
@@ -10,7 +10,9 @@
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
+
 http://www.apache.org/licenses/LICENSE-2.0
+
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,7 +21,7 @@ limitations under the License.
 */
 ///////////////////////////////////////////////////////////////////////////////
 //
-#define Leapduino_Version "1.0"
+#define LEAPDUINO_VERSION "1.0"
 
 //Most Arduino boards have an LED pre-wired to pin 13.
 int led = 13;
@@ -27,7 +29,7 @@ int led = 13;
 //Current LED state.  LOW is off and HIGH is on.
 int ledState = LOW;
 
-//Blink rate in milliseconds.  Default is one second.
+//Blink rate in milliseconds.
 long blinkRate = 500;
 
 //Last time the LED was updated.
@@ -83,7 +85,7 @@ void loop()
       data += (char) (Serial.read());
     
     //Set the blink rate based on our newly-read data.
-    blinkRate = 1000 - (abs(data.toInt()) * 10);
+    blinkRate = abs(data.toInt() * 2);
     
     //A blink rate lower than 30 milliseconds won't really be perceptable by a human.
     if (blinkRate < 30) blinkRate = 30;
